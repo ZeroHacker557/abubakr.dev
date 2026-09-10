@@ -1,5 +1,5 @@
 export type ServiceId = 'restaurant' | 'telegram' | 'website' | 'system';
-export const profile = { name: 'Abubakr', role: 'Fullstack developer', phone: '+998974009877', displayPhone: '+998 97 400 98 77' };
+export const profile = { name: 'Abubakr', role: 'Fullstack developer', phone: '+998974009877', displayPhone: '+998 97 400 98 77', instagram: 'https://www.instagram.com/abubakr_developer/', telegram: 'https://t.me/for_name' };
 export const services: {id:ServiceId; number:string; label:string; short:string; color:string; title:string; description:string; features:string[]}[] = [
  {id:'restaurant',number:'01',label:'Onlayn buyurtma',short:'RESTO / OS',color:'#ff835d',title:'Bir teginishdan — tayyor buyurtmagacha.',description:'Menyu, savat, buyurtma va boshqaruv. Restoraningizning butun jarayoni bitta tizimda.',features:['QR menyu','Onlayn buyurtma','Yetkazib berish','Admin panel']},
  {id:'telegram',number:'02',label:'Telegram botlar',short:'BOT / ENGINE',color:'#a69aff',title:'Mijozingiz yozadi. Botingiz ishlaydi.',description:'Buyurtma qabul qiladigan, savollarga javob beradigan va ish jarayonini avtomatlashtiradigan botlar.',features:['Buyurtma botlari','To‘lov integratsiyasi','Avtomatlashtirish','Mini ilovalar']},

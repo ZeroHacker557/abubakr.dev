@@ -10,6 +10,8 @@ An Uzbek portfolio with an interactive metallic 3D sculpture and hands-on servic
 - Working local demos: restaurant cart and order progress; bot quick replies and chat; three website themes with a projects view; task workflow and live completion totals.
 - All demos are clearly labeled and send no orders, messages, or external requests.
 - Direct telephone link and clipboard copy with success/error feedback.
+- Instagram and Telegram profile links in the responsive footer.
+- Sticky orbit navigation follows the current section; the mobile dialog menu supports keyboard focus and closes after navigation.
 - Responsive layouts for desktop, tablet, and phone. Phone controls are in normal document flow, with touch targets and wrapping layouts.
 
 ## Development
