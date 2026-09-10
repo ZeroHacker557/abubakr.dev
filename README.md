@@ -1,15 +1,22 @@
-# ZUR — interactive 3D portfolio
+# Abubakr — fullstack developer portfolio
 
-An Uzbek-language portfolio with a live Three.js sculpture, material switching, pointer and keyboard rotation, motion controls, project detail dialogs, and responsive layouts.
+An Uzbek portfolio built around an interactive 3D service ecosystem. Contact: +998 97 400 98 77.
 
-## Personalize
+## Experience
 
-Edit `app/portfolio-data.ts` to replace the example projects and add your email or Telegram URL. ORBIT and FORMA are clearly labeled independent visual concepts, not claims of client work. The current display brand is ZUR.
+- Four service modules: restaurant ordering, Telegram bots, websites, and custom business systems.
+- A WebGL point cloud morphs between four shapes as visitors switch services. Supports pointer dragging, keyboard arrows, pause, reset, reduced motion, and a static fallback.
+- Working local demos: restaurant cart and order progress; bot quick replies and chat; three website themes with a projects view; task workflow and live completion totals.
+- All demos are clearly labeled and send no orders, messages, or external requests.
+- Direct telephone link and clipboard copy with success/error feedback.
+- Responsive layouts for desktop, tablet, and phone. Phone controls are in normal document flow, with touch targets and wrapping layouts.
 
 ## Development
 
-Node 22.13+ and the existing pnpm lockfile are required. Run `pnpm dev` for local preview, `pnpm build` for the static export in `dist/client`, and `pnpm exec tsc --noEmit` to check types.
+Use the existing pnpm lockfile and Node 22.13 or later. `pnpm dev` starts the local preview. `pnpm build` exports to `dist/client`. `node node_modules/typescript/bin/tsc --noEmit` validates types.
 
-The sculpture supports pointer drag and arrow keys, three material presets, pause/resume, and orientation reset. It respects reduced-motion preferences and pauses rendering outside the viewport. A static artwork fallback appears if WebGL fails. Dialogs use the installed accessible Base UI primitive.
+This Windows environment has previously required Node 22 to avoid a Node 24 shutdown crash. A temporary build runtime is located at `D:/CodexTemp/zur-portfolio-01a08b00/node22.exe`. The original package scripts are preserved.
 
-Project artworks were generated for this concept. Prior game files remain in the repository as an archive of the earlier project and are not imported by the portfolio.
+`app/portfolio-data.ts` contains the profile and service descriptions. `app/service-demos.tsx` holds the demos, and `app/ecosystem.tsx` renders the 3D scene. The previous `#ishlar` link remains an alias for the new demo section.
+
+The existing Sites project points to the public SUNSHORE site. Save updated versions for review; deployment requires the owner's outstanding approval to replace that public site.

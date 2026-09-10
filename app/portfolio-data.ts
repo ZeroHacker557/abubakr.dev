@@ -1,28 +1,8 @@
-// Shaxsiy ma’lumotlaringiz va haqiqiy ishlaringizni shu yerda kiriting.
-export const profile = {
-  name: 'ZUR',
-  role: 'Creative developer',
-  email: '',
-  telegram: '',
-};
-
-export const projects = [
-  {
-    id: '01', title: 'ORBIT', subtitle: 'Chegarasiz harakat.',
-    category: 'Interaktiv tajriba', year: '2026', image: '/orbit.webp',
-    alt: 'Yorqin yashil yadro atrofida o‘ralgan yaltiroq xrom haykal',
-    tags: ['3D tajriba', 'Art direction'],
-    intro: 'Gravitatsiya, metall va yorug‘lik o‘rtasidagi raqamli tajriba.',
-    idea: 'Markazdagi g‘oya: oddiy shaklga harakat va material orqali xarakter berish. Sovuq metall va tirikdek ko‘rinadigan yorqin yadro bir kompozitsiyada uchrashadi.',
-    approach: 'Qoramtir makon, keskin yorug‘lik va suyuq metall fakturasi. Bosh sahifadagi 3D obyektni aylantirish va uning ranglarini o‘zgartirish shu konseptni davom ettiradi.',
-  },
-  {
-    id: '02', title: 'FORMA', subtitle: 'Shakl. Nur. Xarakter.',
-    category: 'Vizual identitet', year: '2026', image: '/forma.webp',
-    alt: 'To‘q qizil arxitektura ichidagi shaffof to‘q sariq shisha arka',
-    tags: ['Vizual dizayn', 'Eksperimental'],
-    intro: 'Arxitektura ruhini raqamli identitetga aylantiruvchi vizual izlanish.',
-    idea: 'Bitta tanish shakl, kutilmagan material. Shaffof shisha, kuchli rang va aniq soyalar orqali sodda arkaga yangi ma’no beriladi.',
-    approach: 'Katta bo‘shliqlar, terakota ranglari va yoritilgan qirralar. Minimal elementlar yordamida kuchli, tanib olinadigan vizual til hosil qilish.',
-  },
+export type ServiceId = 'restaurant' | 'telegram' | 'website' | 'system';
+export const profile = { name: 'Abubakr', role: 'Fullstack developer', phone: '+998974009877', displayPhone: '+998 97 400 98 77' };
+export const services: {id:ServiceId; number:string; label:string; short:string; color:string; title:string; description:string; features:string[]}[] = [
+ {id:'restaurant',number:'01',label:'Restoran & buyurtma',short:'RESTO / OS',color:'#ff835d',title:'Bir teginishdan — tayyor buyurtmagacha.',description:'Menyu, savat, buyurtma va boshqaruv. Restoraningizning butun jarayoni bitta tizimda.',features:['QR menyu','Onlayn buyurtma','Yetkazib berish','Admin panel']},
+ {id:'telegram',number:'02',label:'Telegram botlar',short:'BOT / ENGINE',color:'#a69aff',title:'Mijozingiz yozadi. Botingiz ishlaydi.',description:'Buyurtma qabul qiladigan, savollarga javob beradigan va ish jarayonini avtomatlashtiradigan botlar.',features:['Buyurtma botlari','To‘lov integratsiyasi','Avtomatlashtirish','Mini ilovalar']},
+ {id:'website',number:'03',label:'Veb-saytlar',short:'WEB / EXPERIENCE',color:'#bce78b',title:'Birinchi taassurot — sizning foydangizga.',description:'Brendingiz xarakteriga mos, tezkor va har bir ekranda qulay veb-saytlar.',features:['Korporativ sayt','Internet do‘kon','Landing page','Shaxsiy portfolio']},
+ {id:'system',number:'04',label:'Maxsus tizimlar',short:'CUSTOM / CORE',color:'#8cd7e9',title:'Jarayoningiz qanday bo‘lsa, tizimingiz ham shunday.',description:'CRM, boshqaruv panellari, API va biznesingizga mos maxsus yechimlar. Frontenddan backendgacha.',features:['CRM & ERP','API integratsiya','Boshqaruv paneli','Maxsus platforma']},
 ];
