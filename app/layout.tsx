@@ -1,3 +1,3 @@
 import './globals.css';
 export const metadata = { title: 'Abubakr — Fullstack developer | G‘oyadan tizimgacha', description: 'Abubakr — fullstack dasturchi. Restoranlar uchun online buyurtma tizimlari, Telegram botlar, veb-saytlar va maxsus biznes platformalar. +998 97 400 98 77.' };
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="uz"><body>{children}</body></html>}
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="uz"><head><link rel="preload" href="/fonts/Sora-Variable.ttf" as="font" type="font/ttf" crossOrigin="anonymous"/><link rel="preload" href="/fonts/InstrumentSerif-Italic.ttf" as="font" type="font/ttf" crossOrigin="anonymous"/></head><body>{children}</body></html>}

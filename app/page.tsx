@@ -1,22 +1,19 @@
 'use client';
 import { useState, useEffect, useRef, type CSSProperties } from 'react';
-import { ArrowDown, ArrowUpRight, ArrowRight, Code2, Layers3, Phone, Copy, Check, Pause, Play, RotateCcw, Utensils, Send, Globe2, Boxes, Plus } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, ArrowRight, Code2, Layers3, Phone, Copy, Check, Utensils, Send, Globe2, Boxes, Plus } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { profile, services, type ServiceId } from './portfolio-data';
-import Ecosystem from './ecosystem';
+import Sculpture from './sculpture';
 import { RestaurantDemo, TelegramDemo, WebsiteDemo, SystemDemo } from './service-demos';
 
 const icons = [Utensils, Send, Globe2, Boxes];
 const demos = [RestaurantDemo, TelegramDemo, WebsiteDemo, SystemDemo];
 export default function Portfolio() {
  const [active,setActive] = useState<ServiceId>('restaurant');
- const [paused,setPaused] = useState(false);
- const [reset,setReset] = useState(0);
  const [copied,setCopied] = useState(false);
  const [copyFailed,setCopyFailed] = useState(false);
  const copyTimer = useRef<ReturnType<typeof setTimeout>|null>(null);
  const current = services.find(s=>s.id===active)!;
- const index = services.indexOf(current);
  useEffect(()=>()=>{if(copyTimer.current)clearTimeout(copyTimer.current)},[]);
  const copyPhone=async()=>{try{await navigator.clipboard.writeText(profile.phone);setCopied(true);setCopyFailed(false);if(copyTimer.current)clearTimeout(copyTimer.current);copyTimer.current=setTimeout(()=>setCopied(false),2400);}catch{setCopyFailed(true);}};
  return <main style={{'--active':current.color} as CSSProperties}>
@@ -28,11 +25,8 @@ export default function Portfolio() {
   </header>
   <section className="hero hero-clear wrap" id="top" aria-labelledby="hero-title">
    <div className="hero-clear-layout">
-    <div className="hero-clear-copy"><div className="developer-label"><span/> ABUBAKR · FULLSTACK DEVELOPER</div><h1 id="hero-title">Biznesingiz uchun<br/><span>sayt, bot va tizim.</span></h1><p>Restoranlar uchun onlayn buyurtma, Telegram botlar, veb-saytlar va maxsus biznes tizimlarini yarataman.</p><p className="hero-clear-note">Dizayndan backendgacha — loyihangizni to‘liq ishlab chiqaman.</p><div className="hero-actions"><a className="primary-button" href="#laboratoriya">Xizmatlarni ko‘rish <ArrowDown size={18}/></a><a className="hero-secondary" href="#aloqa">Bog‘lanish <ArrowUpRight size={18}/></a></div><div className="hero-clear-skills"><span><Check size={15}/> Frontend</span><span><Check size={15}/> Backend</span><span><Check size={15}/> Integratsiya</span></div></div>
-    <div className="hero-studio"><div className="studio-heading"><span><Code2 size={19}/> Nimalar yarataman</span><div className="scene-controls"><button aria-label={paused?'3D harakatni yoqish':'3D harakatni to‘xtatish'} aria-pressed={paused} title={paused?'Davom ettirish':'To‘xtatish'} onClick={()=>setPaused(!paused)}>{paused?<Play size={15}/>:<Pause size={15}/>}</button><button aria-label="3D ko‘rinishni tiklash" title="Ko‘rinishni tiklash" onClick={()=>setReset(v=>v+1)}><RotateCcw size={15}/></button></div></div><div className="studio-scene"><Ecosystem active={index} paused={paused} reset={reset}/></div>
-     <div className="studio-services" role="group" aria-label="Xizmat turini tanlang">{services.map((service,i)=>{const Icon=icons[i];return <button key={service.id} className={active===service.id?'is-active':''} style={{'--service-color':service.color} as CSSProperties} aria-pressed={active===service.id} onClick={()=>setActive(service.id)}><Icon size={18}/><span>{service.label}</span>{active===service.id&&<Check className="studio-check" size={14}/>}</button>})}</div>
-     <div className="studio-footer"><span>{current.label}</span><a href="#laboratoriya">Namunasini ko‘rish <ArrowRight size={16}/></a></div>
-    </div>
+    <div className="hero-clear-copy"><div className="developer-label"><span/> ABUBAKR · FULLSTACK DEVELOPER</div><h1 id="hero-title">Biznesingiz uchun<span>sayt, bot va tizim.</span></h1><p>Restoranlar uchun onlayn buyurtma, Telegram botlar, veb-saytlar va maxsus biznes tizimlarini yarataman.</p><p className="hero-clear-note">Dizayndan backendgacha — loyihangizni to‘liq ishlab chiqaman.</p><div className="hero-actions"><a className="primary-button" href="#laboratoriya">Xizmatlarni ko‘rish <ArrowDown size={18}/></a><a className="hero-secondary" href="#aloqa">Bog‘lanish <ArrowUpRight size={18}/></a></div><div className="hero-clear-skills"><span><Check size={15}/> Frontend</span><span><Check size={15}/> Backend</span><span><Check size={15}/> Integratsiya</span></div></div>
+    <div className="hero-sculpture"><Sculpture material={0} paused={false} reset={0}/></div>
    </div>
   </section>
   <div className="capability-ticker" aria-label="Xizmatlar"><div><span>ONLINE BUYURTMA</span><Plus/><span>TELEGRAM BOTLAR</span><Plus/><span>WEB TAJRIBALAR</span><Plus/><span>MAXSUS TIZIMLAR</span><Plus/><span>FRONTEND + BACKEND</span><Plus/></div></div>
