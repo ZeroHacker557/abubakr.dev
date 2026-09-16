@@ -24,4 +24,10 @@ This Windows environment has previously required Node 22 to avoid a Node 24 shut
 
 `app/portfolio-data.ts` contains the profile and service descriptions. `app/service-demos.tsx` holds the demos, and `app/sculpture.tsx` renders the hero scene. The previous `#ishlar` link remains an alias for the new demo section.
 
+## Vercel deployment
+
+The repository uses Vinext's static export. `vercel.json` selects the **Other** framework preset, runs `pnpm build`, and serves `dist/client`, where the generated `index.html` and browser assets live. Vercel detects pnpm from the existing lockfile.
+
+Import the repository with its root directory set to the folder containing `package.json` and `vercel.json` (the repository root). The Node.js version must satisfy `package.json` (22.13 or later). Deploy a commit containing `vercel.json`; redeploying an older commit will not include this fix. If the production domain still returns `404 NOT_FOUND` after a successful build, check that it is assigned to this project's latest production deployment under Settings → Domains.
+
 The existing Sites project points to the public SUNSHORE site. Save updated versions for review; deployment requires the owner's outstanding approval to replace that public site.
