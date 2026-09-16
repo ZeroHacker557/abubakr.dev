@@ -12,6 +12,7 @@ An Uzbek portfolio with an interactive metallic 3D sculpture and hands-on servic
 - Direct telephone link and clipboard copy with success/error feedback.
 - Instagram and Telegram profile links in the responsive footer.
 - An animated company gallery features the supplied MUSA, V7, Fresh Express, and Afsona logos, with pause and reduced-motion support.
+- A draggable before/after comparison presents the same three sample restaurant orders as manual records and an integrated dashboard, with keyboard support and view buttons.
 - Sticky orbit navigation follows the current section; the mobile dialog menu supports keyboard focus and closes after navigation.
 - Responsive layouts for desktop, tablet, and phone. Phone controls are in normal document flow, with touch targets and wrapping layouts.
 
