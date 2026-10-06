@@ -3,7 +3,8 @@ import { useEffect, useRef, useState, type CSSProperties, type FormEvent } from 
 import { ArrowRight, ArrowUpRight, Check, ChevronRight, Coffee, CookingPot, Minus, Plus, Send, ShoppingBag, Utensils, RotateCcw, Globe2, Sparkles, LayoutDashboard, PackageCheck, Truck, CircleCheck, Circle, Clock3 } from 'lucide-react';
 
 const menu=[{name:'Margherita',note:'Pomidor · mozzarella · rayhon',price:48000,Icon:Utensils},{name:'Pasta Alfredo',note:'Qaymoqli sous · tovuq',price:42000,Icon:CookingPot},{name:'Limonad',note:'Limon · yalpiz · muz',price:18000,Icon:Coffee}];
-const money=(value:number)=>new Intl.NumberFormat('uz-UZ').format(value);
+// Locale-independent grouping so server and browser render identical text.
+const money=(value:number)=>String(value).replace(/\B(?=(\d{3})+(?!\d))/g,' ');
 export function RestaurantDemo(){
  const [quantities,setQuantities]=useState([0,0,0]),[step,setStep]=useState(0);
  const total=quantities.reduce((sum,q,i)=>sum+q*menu[i].price,0),count=quantities.reduce((a,b)=>a+b,0);

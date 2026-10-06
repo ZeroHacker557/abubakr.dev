@@ -9,7 +9,8 @@ const orders = [
  { id: '1049', name: 'Javohir A.', initials: 'JA', items: '1 × Lavash · 1 × Cola', total: 40000, source: 'Sayt', status: 'Yangi', tone: 'new' },
  { id: '1050', name: 'Madina S.', initials: 'MS', items: '2 × Pizza', total: 116000, source: 'Telegram', status: 'Yetkazilmoqda', tone: 'delivery' },
 ];
-const money = (value: number) => new Intl.NumberFormat('ru-RU').format(value);
+// Locale-independent grouping so server and browser render identical text.
+const money = (value: number) => String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 const total = orders.reduce((sum, order) => sum + order.total, 0);
 const changes = [
  { icon: ReceiptText, title: 'Buyurtmalar', before: 'Turli chat va yozuvlarda', after: 'Barchasi bitta ro‘yxatda' },
